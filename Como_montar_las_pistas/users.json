@@ -1,0 +1,22 @@
+{
+    "carlosbasultopardo@gmail.com": {
+        "email": "carlosbasultopardo@gmail.com",
+        "hints_given": 3,
+        "timestamps": [
+            {
+                "hint": 1,
+                "at": "2025-10-19T15:39:29+00:00"
+            },
+            {
+                "hint": 2,
+                "at": "2025-10-19T15:39:41+00:00"
+            },
+            {
+                "hint": 3,
+                "at": "2025-10-19T15:39:48+00:00"
+            }
+        ],
+        "flag_submitted": "dsfsdf",
+        "flag_time": "2025-10-19T15:45:46+00:00"
+    }
+}

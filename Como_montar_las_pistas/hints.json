@@ -1,0 +1,34 @@
+{
+  "challenge": {
+    "enabled": true,
+    "title": "Reto: El Archivo Oculto",
+    "description": "Has recibido un conjunto de archivos aparentemente inocentes. Sin embargo, se sospecha que uno de ellos contiene información sensible oculta. Tu misión consiste en descubrir el contenido oculto utilizando técnicas de análisis forense.",
+    "objectives": [
+      "Aprender a analizar metadatos de imágenes.",
+      "Utilizar herramientas forenses básicas en archivos locales.",
+      "Entregar la bandera final cuando la encuentres."
+    ],
+    "resources": [
+      {
+        "name": "Dossier del caso.pdf",
+        "description": "Documento con el contexto completo del incidente.",
+        "file": "dossier-caso.pdf"
+      }
+    ]
+  },
+  "hints": [
+    {
+      "id": 1,
+      "type": "text",
+      "title": "Pista 1",
+      "content": "Revisa los metadatos del archivo 'misterio.jpg'. Puede que haya algo oculto."
+    },
+    {
+      "id": 2,
+      "type": "file",
+      "title": "Pista 2",
+      "content": "documento-clave.pdf",
+      "description": "Descarga este documento y analízalo con herramientas forenses."
+    }
+  ]
+}
