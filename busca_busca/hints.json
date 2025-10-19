@@ -1,7 +1,7 @@
 {
   "challenge": {
     "enabled": true,
-    "title": "Reto: El Archivo Oculto (ctf_namsted)",
+    "title": "Reto: Busca Busca",
     "description": "Has recibido un fichero comprimido (ctf_namsted.zip) que contiene 1000 archivos JavaScript (.js). Uno o varios de esos .js contienen la cadena secreta 'namsted' que te llevará a la bandera. Tu misión: descargar el ZIP, extraerlo, buscar la cadena dentro de los .js y entregar la bandera encontrada.",
     "objectives": [
       "Descargar y manejar archivos comprimidos con herramientas de línea de comandos.",
