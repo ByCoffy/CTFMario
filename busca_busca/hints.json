@@ -2,7 +2,7 @@
   "challenge": {
     "enabled": true,
     "title": "Reto: Busca Busca",
-    "description": "Has recibido una ruta con un zip comprimido llamado ctf_namsted.zip que contiene 1000 archivos JavaScript (.js). Uno o varios de esos .js contienen la cadena secreta 'namsted' que te llevará a la bandera. Tu misión: descargar el ZIP, extraerlo, buscar la cadena dentro de los .js y entregar la bandera encontrada.",
+    "description": "Has recibido una ruta con un zip comprimido llamado ctf_namsted.zip que contiene 1000 archivos JavaScript (.js). Uno o varios de esos .js contienen la cadena secreta 'FLAG{Palabra Secreta}' que te llevará a la bandera. Tu misión: descargar el ZIP, extraerlo, buscar la cadena dentro de los .js y entregar la bandera encontrada.",
     "objectives": [
       "1º Descargar y manejar archivos comprimidos con herramientas de línea de comandos.",
       "2º Recorrer masivamente archivos fuente (.js) y localizar cadenas concretas."
@@ -45,7 +45,7 @@
 
   ],
   "delivery": {
-    "flag_format_hint": "La bandera final suele tener formato FLAG{...} o similar. Cuando encuentres la cadena 'namsted' inspecciona las líneas adyacentes en el .js para localizar la bandera completa.",
+    "flag_format_hint": "La bandera final suele tener formato FLAG{...} o similar. Cuando encuentres la cadena FLAG inspecciona las líneas adyacentes en el .js para localizar la bandera completa.",
     "expected_output_example": "Sube la cadena que esta contenida dentro de FLAG"
   }
 }
