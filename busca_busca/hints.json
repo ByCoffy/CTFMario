@@ -2,15 +2,15 @@
   "challenge": {
     "enabled": true,
     "title": "Reto: Busca Busca",
-    "description": "Has recibido un fichero comprimido (ctf_namsted.zip) que contiene 1000 archivos JavaScript (.js). Uno o varios de esos .js contienen la cadena secreta 'namsted' que te llevará a la bandera. Tu misión: descargar el ZIP, extraerlo, buscar la cadena dentro de los .js y entregar la bandera encontrada.",
+    "description": "Has recibido una ruta con un zip comprimido llamado ctf_namsted.zip que contiene 1000 archivos JavaScript (.js). Uno o varios de esos .js contienen la cadena secreta 'namsted' que te llevará a la bandera. Tu misión: descargar el ZIP, extraerlo, buscar la cadena dentro de los .js y entregar la bandera encontrada.",
     "objectives": [
-      "Descargar y manejar archivos comprimidos con herramientas de línea de comandos.",
-      "Recorrer masivamente archivos fuente (.js) y localizar cadenas concretas."
+      "1º Descargar y manejar archivos comprimidos con herramientas de línea de comandos.",
+      "2º Recorrer masivamente archivos fuente (.js) y localizar cadenas concretas."
     ],
     "resources": [
       {
         "name": "Archivo CTF descargable",
-        "description": "Descarga el paquete que contiene los 1000 .js y extrae su contenido. Sustituye la URL por la real que te haya facilitado el organizador del reto.",
+        "description": "Descarga el paquete que contiene los 1000 .js y extrae su contenido. Sustituye la URL por la real que te haya facilitado el organizador del reto. Es posible que el comando wget no este instalado, apt install wget",
         "file": "ctf_namsted.zip",
         "download_example": "wget https://example.com/ctf_namsted.zip -O ctf_namsted.zip && unzip ctf_namsted.zip -d ctf_namsted"
       },
@@ -24,28 +24,28 @@
     {
       "id": 1,
       "type": "text",
-      "title": "Pista 1 — Contexto",
-      "content": "El autor del reto ha escondido la cadena 'namsted' en archivos JavaScript. No es una imagen ni un PDF: céntrate en los .js. Busca coincidencias exactas en todo el árbol de carpetas."
+      "title": "Obtener evidencia",
+      "content": "Has recibdo una URL, la tienes en las descripción del reto. Lo primero que tienes es que obtener el zip. Pudes usar el comando wget para obtenerla. Ejemplo: wget https://ejemplo.com/archivo.zip. "
     },
     {
       "id": 2,
       "type": "file",
-      "title": "Pista 2 — Descargar y preparar",
+      "title": "Descomprimir evidencia",
       "content": "ctf_namsted.zip",
-      "description": "Ejemplo de descarga y extracción (reemplaza la URL por la real):\n\nwget https://example.com/ctf_namsted.zip -O ctf_namsted.zip\nunzip ctf_namsted.zip -d ctf_namsted\ncd ctf_namsted\n\nSi usas Windows con PowerShell puedes usar Invoke-WebRequest y Expand-Archive."
+      "description": "Además el archivo está comprimido. En función de la compresión puedes usar el comando unzip, unrar o  tar. Recueda el paquete puede no estar instalado, ejemplo apt install zip unzip. Ojo para futuro con file podemos saber el tipo de archivo, puede ser que ponga zip y que realmente sea un rar. No siempre es todo lo que parece."
     },
 
   {
   "id": 3,
   "type": "text",
-  "title": "Pista 3 — Búsqueda con grep (Linux, macOS o WSL)",
-  "content": "Una vez que hayas descomprimido el archivo ctf_namsted.zip, sitúate dentro de la carpeta que contiene los 1000 archivos .js. Para buscar la cadena 'namsted' en todo el árbol de directorios, utiliza el siguiente comando:\n\n grep -RIn --include='*.js' 'namsted' . \n\nExplicación de los parámetros:\n -R  → Busca de forma recursiva en todas las subcarpetas.\n -I  → Ignora archivos binarios (solo texto).\n -n  → Muestra el número de línea donde aparece la coincidencia.\n --include='*.js'  → Limita la búsqueda solo a archivos JavaScript.\n\nEl resultado mostrará líneas como:\n ./file_0345.js:12:function secreto(){ /* namsted ... */ }\n\nSi trabajas en Windows con PowerShell, puedes usar:\n Select-String -Path 'ctf_namsted\\**\\*.js' -Pattern 'namsted' -SimpleMatch | Format-Table Path,LineNumber,Line -AutoSize"
+  "title": "Búsqueda recursiva",
+  "content": "Una vez que hayas descomprimido el archivo ctf_namsted.zip, sitúate dentro de la carpeta que contiene los 1000 archivos .js. Para buscar la cadena 'namsted' en todo el árbol de directorios--> grep -r cadena_a_buscar /ruta/al/directorio "
 }
 
 
   ],
   "delivery": {
     "flag_format_hint": "La bandera final suele tener formato FLAG{...} o similar. Cuando encuentres la cadena 'namsted' inspecciona las líneas adyacentes en el .js para localizar la bandera completa.",
-    "expected_output_example": "ctf_namsted/path/to/file123.js:345:/ ... namsted ... FLAG{este_es_un_ejemplo} ... */"
+    "expected_output_example": "Sube la cadena que esta contenida dentro de FLAG"
   }
 }
