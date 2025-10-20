@@ -17,6 +17,10 @@
       {
         "name": "Capturar la evidencia y descomprimirla",
         "description": "Trabajas desde Ubuntu Server sin interfaz, debes capturar la evidencia y descomprimirla."
+      },
+       {
+        "name": "DOC Wget",
+        "description": "Uso de wget: https://www.hostinger.com/es/tutoriales/usar-comando-wget "
       }
     ]
   },
@@ -25,7 +29,7 @@
       "id": 1,
       "type": "text",
       "title": "Obtener evidencia",
-      "content": "Has recibdo una URL, la tienes en las descripción del reto. Lo primero que tienes es que obtener el zip. Pudes usar el comando wget para obtenerla. Ejemplo: wget https://ejemplo.com/archivo.zip. "
+      "content": "Has recibdo una URL, la tienes en las descripción del reto. Lo primero que tienes es que obtener el zip. Pudes usar el comando wget para obtenerla. Ejemplo: wget https://ejemplo.com/archivo.zip. Puede ser que tengas que instalar el paquete de wget en linux "
     },
     {
       "id": 2,
