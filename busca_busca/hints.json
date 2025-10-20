@@ -39,7 +39,7 @@
   "id": 3,
   "type": "text",
   "title": "Búsqueda recursiva",
-  "content": "Una vez que hayas descomprimido el archivo ctf_namsted.zip, sitúate dentro de la carpeta que contiene los 1000 archivos .js. Para buscar la cadena 'namsted' en todo el árbol de directorios--> grep -r cadena_a_buscar /ruta/al/directorio "
+  "content": "Una vez que hayas descomprimido el archivo ctf_namsted.zip, sitúate dentro de la carpeta que contiene los 1000 archivos .js. Para buscar la cadena 'FLAG' en todo el árbol de directorios--> Usa el comando grep, no proporcion el comando completo, ya que sería muy sencilla. Pista grep y recursividad. "
 }
 
 
