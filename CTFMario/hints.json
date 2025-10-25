@@ -1,0 +1,95 @@
+{
+  "challenge": {
+    "enabled": true,
+    "title": "CTF Mario Marina Velasco",
+    "description": "Máquina víctima Ubuntu con vulnerabilidades intencionadas. Objetivo: obtener las dos claves almacenadas en /home/usuario/user.key y /root/root.key. El reto combina acceso a servicios, explotación de una aplicación web vulnerable y escalado de privilegios.",
+    "objectives": [
+      "Identificar y entregar las FLAGS de user y root (contenido exacto de /home/usuario/user.key y /root/root.key)."
+    ],
+    "resources": [
+      {
+        "name": "Máquina Virtual",
+        "description": "La máquina víctima se repartirá en clase mediante pendrives. Contendrá los servicios y ficheros necesarios para la práctica."
+      }
+    ]
+  },
+  "hints": [
+    {
+      "id": 1,
+      "type": "text",
+      "title": "Reconocimiento",
+      "content": "Comienza con un escaneo de puertos para descubrir servicios activos (por ejemplo, FTP y HTTP)."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "title": "ServicioVulnerable",
+      "content": "Prueba a conectarte al servicio FTP como 'anonymous'. Muchos servidores permiten este acceso y exponen directorios útiles."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "title": "ServicioVulnerable2",
+      "content": "Dentro del FTP busca archivos descargables que mencionen nombres de usuario (por ejemplo 'APF') o que contengan pistas sobre la aplicación web vulnerable."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "title": "Username?",
+      "content": "Si encuentras referencias a 'APF' en archivos del FTP, esa será la cuenta objetivo para la siguiente fase."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "title": "CamposDeContraseñas?",
+      "content": "La aplicación web incluye un formulario de login vulnerable a inyección SQL. Ensaya técnicas de bypass para obtener credenciales sin conocer la contraseña."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "title": "CamposDeContraseñas2",
+      "content": "Prueba inyecciones simples que conviertan la condición SQL en verdadera. No se ofrece el payload literal para favorecer el aprendizaje."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "title": "AccedeAlUsuario",
+      "content": "Con las credenciales obtenidas inicia sesión como APF y revisa su directorio personal: /home/APF."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "title": "PrimeraFlag!",
+      "content": "En /home/APF debería existir user.key. Lee su contenido y guárdalo como evidencia."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "title": "EscaladaDePrivilegios",
+      "content": "Comprueba permisos de distintos archivos clave, alomejor puedes obtener permisos de administrador."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "title": "EscaladaDePrivilegio2",
+      "content": "Añade APF a la entrada del grupo sudo y luego verifica si puedes usar sudo."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "title": "Obtener root",
+      "content": "Si sudo funciona, úsalo para leer /root/root.key o para obtener una shell root y acceder al fichero."
+    }
+  ],
+  "delivery": {
+    "flag_format_hint": "Las claves son textos planos dentro de los ficheros: /home/usuario/user.key y /root/root.key. Devuelve exactamente el contenido de cada fichero como prueba.",
+    "expected_output_example": {
+      "user_key_example": "Ejemplo de salida: (contenido exacto de /home/usuario/user.key)",
+      "root_key_example": "Ejemplo de salida: (contenido exacto de /root/root.key)"
+    }
+  },
+  "notes": {
+    "safety": "Actividad formativa: no reproduzcas estas técnicas fuera de un entorno controlado y autorizado.",
+    "teacher_hint": "Puedes ajustar los permisos de /etc/group para hacer la escalada más o menos directa. También puedes dejar pistas adicionales en el FTP para facilitar el descubrimiento de la cuenta APF."
+  }
+}
